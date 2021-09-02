@@ -7,8 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.retailstore.dto.OrderDTO;
 import com.retailstore.enumeration.ProductTypes;
@@ -26,7 +25,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/addNew")
+	@GetMapping("/addNew")
 	public Order saveOrder() throws ParseException {
 		
 		Date custJoinDate = new SimpleDateFormat("yyyy-MM-dd").parse("2017-09-02");  
